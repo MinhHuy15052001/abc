@@ -1,6 +1,6 @@
 <?php
     require "configs/DBConnection.php";
-
+    
     if(isset($_POST["add"])){
         $bv_id = $_POST["txtArID"];
         $bv_ten = $_POST["txtArName"];
@@ -18,6 +18,7 @@
             header("location: article.php");
         }
     }
+    
     $sql = "SELECT * FROM tacgia";
     $result = mysqli_query($conn,$sql);
     $sql1 = "SELECT * FROM theloai";

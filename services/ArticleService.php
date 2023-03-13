@@ -31,7 +31,7 @@ class ArticleService{
         //Tạo Prepared Statement
         $stmt = $conn -> prepare($sql);
         //Thiết lập kiểu dữ liệu trả về
-        $stmt->setFetchMode(PDO::FETCH_OBJ);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
         //Gán giá trị và thực thi
         $stmt->execute(array('id' => $id));
         $row = $stmt->fetch();;

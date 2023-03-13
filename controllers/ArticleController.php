@@ -28,7 +28,10 @@ class ArticleController{
             $id=$_GET['id'];
         $articelService = new ArticleService();
         $articleDetail = $articelService->getDetailArticle($id);
-        include("views/article/detail_article.php");
+         $articleDetail['tieude'];
+        $loader = new \Twig\Loader\FilesystemLoader('views/home');
+        $twig = new \Twig\Environment($loader);
+        echo $twig->render('detail_article.twig', array('articleDetail' => $articleDetail));
     }
 }
 ?>
